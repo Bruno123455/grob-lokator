@@ -4,6 +4,7 @@
         <a>Mirogoj<img src="../assets/mirogoj.png"></a>
         <a>Lovrinac<img src="../assets/lovrinac.png"></a>
         <a>Varaždin<img src="../assets/varazdin.png"></a>
+        <!--potrebno je linkati a elemente da zasebno otvaraju odgovarajuće komponenete-->
         <Mirogoj/>
         <Lovrinac/>
         <Varazdin/>
