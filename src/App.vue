@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <AddTodo/>
-    <Carousel/>
+    <Header/>
+    <Picker/>
     <Timer/> 
   </div>
 </template>
 
 <script>
-import AddTodo from './components/AddTodo.vue'
-import Carousel from './components/Carousel.vue'
+import Header from './components/Header.vue'
+import Picker from './components/Picker.vue'
 import Timer from './components/Timer.vue'
 
 export default {
   name: 'App',
   components: {
-    AddTodo,
-    Carousel,
+    Header,
+    Picker,
     Timer,
   }
 }

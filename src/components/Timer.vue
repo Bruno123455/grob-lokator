@@ -81,6 +81,7 @@ export default {
     .all{
         border-top: 5px solid #B0A690;
         padding-top: 30px;
+        padding-bottom: 30px;
         width: 80%;
         margin: auto;
     }

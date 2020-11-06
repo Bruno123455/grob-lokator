@@ -1,7 +1,7 @@
 <template>
     <div class="all">
         <section>
-        <p class="content"><b>Tražim:</b> {{ Tražim }}</p>
+        <p class="content"><b><br/>Lovrinac, Tražim:</b> {{ Tražim }}</p>
         <b-field label="Pretraži imena:">
             <b-autocomplete
                 rounded
@@ -56,6 +56,7 @@
     .all{
         width: 80%;
         margin:auto;
-        padding-top: 20px;
+        margin-top: 50px;
+        border-top: 5px solid #B0A690;
     }
 </style>

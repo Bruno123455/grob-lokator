@@ -3,9 +3,10 @@ import App from './App.vue'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import VueTimers from 'vue-timers'
+import VueRouter from 'vue-router'
 
 
-
+Vue.use(VueRouter)
 Vue.use(Buefy)
 Vue.use(VueTimers)
 

@@ -1,13 +1,12 @@
 <template>
     <div class="images">
         <h2>Na kojem se groblju nalazite?</h2>
-        <a>Mirogoj<img src="../assets/mirogoj.png"></a>
-        <a>Lovrinac<img src="../assets/lovrinac.png"></a>
-        <a>Varaždin<img src="../assets/varazdin.png"></a>
-        <!--potrebno je linkati a elemente da zasebno otvaraju odgovarajuće komponenete-->
-        <Mirogoj/>
-        <Lovrinac/>
-        <Varazdin/>
+        <a v-on:click="mHidden = !mHidden" class="mir">Mirogoj<img src="../assets/mirogoj.png"></a>
+        <a v-on:click="lHidden = !lHidden" class="mir">Lovrinac<img src="../assets/lovrinac.png"></a>
+        <a v-on:click="vHidden = !vHidden" class="mir">Varaždin<img src="../assets/varazdin.png"></a>
+        <Mirogoj v-if="!mHidden"></Mirogoj> 
+        <Lovrinac v-if="!lHidden"></Lovrinac>
+        <Varazdin v-if="!vHidden"></Varazdin>
     </div>
 </template>
 
@@ -17,12 +16,19 @@ import Lovrinac from './Lovrinac.vue'
 import Varazdin from './Varazdin.vue'
 
 export default {
-  name: 'Carousel',
+  name: 'Picker',
   components: {
     Mirogoj,
     Lovrinac,
     Varazdin,
-  }
+  },
+  data() {
+            return {
+                mHidden: true,
+                lHidden: true,
+                vHidden: true
+            };
+        }
 }
 </script>
 
@@ -31,7 +37,7 @@ export default {
     img{
         width: 450px;
         height: 350px;
-        border: 3px solid black;
+        border: 3px solid #B0A690;
         margin-inline-end: 10px;
         filter: grayscale(100%);
         display: block;
@@ -47,7 +53,7 @@ export default {
         padding-top: 20px;
         padding-bottom: 40px;
     }
-    a{
+    .mir{
         font-size: 30px;
         color: #D7D6CB;
         font-weight: bold;
@@ -62,7 +68,8 @@ export default {
     a:hover{
         color: #809ead;
     }
-    .mir {
-        display: none;
+    #cl {
+        all:unset;
     }
+
 </style>
