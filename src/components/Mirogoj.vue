@@ -2,7 +2,7 @@
     <div class="all">
         <section>
         <p class="content"><b><br/>Mirogoj, Tražim:</b> {{ Tražim }}</p>
-        <b-field label="Pretraži imena:">
+        <b-field id="fie" label="Pretraži imena:">
             <b-autocomplete
                 rounded
                 v-model="name"
@@ -22,6 +22,11 @@
 
 <script>
     export default {
+        mounted() {
+            fetch('https://jsonplaceholder.typicode.com/photos')
+            .then(response => response.json())
+            .then(json => console.log(json))
+        },
         data() {
             return {
                 data: [
@@ -59,5 +64,8 @@
         margin:auto;
         margin-top: 50px;
         border-top: 5px solid #B0A690;
+    }
+    .label{
+        all: unset;
     }
 </style>

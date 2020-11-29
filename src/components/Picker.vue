@@ -27,7 +27,7 @@ export default {
                 mHidden: true,
                 lHidden: true,
                 vHidden: true
-            };
+            }
         }
 }
 </script>

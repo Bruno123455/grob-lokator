@@ -2,7 +2,8 @@
   <div id="app">
     <Header/>
     <Picker/>
-    <Timer/> 
+    <Timer/>
+    <Newsletter/>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Header from './components/Header.vue'
 import Picker from './components/Picker.vue'
 import Timer from './components/Timer.vue'
+import Newsletter from './components/Newsletter.vue'
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
     Header,
     Picker,
     Timer,
+    Newsletter,
   }
 }
 </script>

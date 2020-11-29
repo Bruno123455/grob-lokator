@@ -1,69 +1,31 @@
 <template>
     <div class="all">
         <h2>Predugo se zadržavate na groblju?</h2>
-        <p>Zadajte si vrijeme:(nije u funkciji)</p>
+        <p>Zadajte si vrijeme:</p>
         <b-field class="timer">
             <b-numberinput v-model="number"></b-numberinput>
         </b-field>
-        <div class="count">Time Remaining: <br/>  {{remaining}}</div>
+        <Pomodoro :key="number" :minutes="number" :pomodoro-label="tekst"
+        :start-label="start" :pause-label="pause" :reset-label="reset"/>
     </div>
 </template>
 
 <script>
-import {mixin as VueTimers} from 'vue-timers'
-var moment = require('moment');
-moment().format(); 
-
-export default {
-    name: 'countdown',
-
-    timers: {
-        updateTime: { time: 1000, autostart: false, repeat: true}
-    },
-
-    mixins: [VueTimers],
-
-    data(){
+    import Pomodoro from 'vuemodoro'
+    export default {
+    name: 'Timer',
+    data() {
         return {
-            remaining_secs: null,
-            ends_at: null,
-            number: 10,
-            numberPlaceholder: 30,
-        }
+        number: 0,
+        tekst: "Preostalo vrijeme:",
+        start: "Pokreni",
+        pause: "Pauziraj",
+        reset: "Ponovno pokreni"
+        };
     },
-
-    mounted(){
-        this.start();
-    },
-
-    methods:{
-        start: function () {
-            this.ends_at = moment().add(10, 'minutes');
-            this.$timer.start('updateTime');
-        },
-
-        updateTime: function(){
-            const now = moment();
-            const ends = moment(this.ends_at);
-            const duration = moment.duration(ends.diff(now));
-
-            this.remaining_secs = Math.floor(duration.asSeconds());
-        }
-    },
-
-    computed:{
-        remaining: function () {
-            if (!this.remaining_secs) {
-                return '10mins';
-            }
-            const duration = moment.duration(this.remaining_secs, 'seconds');
-
-            const mins = duration.minutes();
-            const secs = duration.seconds();
-
-            return mins ? `${mins}mins ${secs}secs` : `${secs}secs`;
-        }
-    }
+    components: {
+        Pomodoro
+  }
 }
 </script>
 
