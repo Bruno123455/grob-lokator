@@ -3,7 +3,7 @@
         <h2>Predugo se zadržavate na groblju?</h2>
         <p>Zadajte si vrijeme:</p>
         <b-field class="timer">
-            <b-numberinput v-model="number"></b-numberinput>
+            <b-numberinput min="1" v-model="number"></b-numberinput>
         </b-field>
         <Pomodoro :key="number" :minutes="number" :pomodoro-label="tekst"
         :start-label="start" :pause-label="pause" :reset-label="reset"/>
@@ -16,7 +16,7 @@
     name: 'Timer',
     data() {
         return {
-        number: 0,
+        number: 1,
         tekst: "Preostalo vrijeme:",
         start: "Pokreni",
         pause: "Pauziraj",

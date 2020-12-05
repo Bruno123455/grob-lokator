@@ -8,13 +8,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@syncfusion/ej2-vue-dropdowns": "^18.3.51",
     "buefy": "^0.9.4",
     "core-js": "^3.6.5",
     "emailjs-com": "^2.6.4",
     "moment": "^2.29.1",
     "vue": "^2.6.11",
     "vue-circular-count-down-timer": "^1.0.4",
+    "vue-dynamic-dropdown": "^1.0.12",
     "vue-router": "^3.4.8",
+    "vue-select": "^3.10.8",
     "vue-timers": "^2.0.4",
     "vuemodoro": "^1.0.2"
   },

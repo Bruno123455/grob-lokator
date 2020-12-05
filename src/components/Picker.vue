@@ -4,7 +4,7 @@
         <a v-on:click="mHidden = !mHidden" class="mir">Mirogoj<img src="../assets/mirogoj.png"></a>
         <a v-on:click="lHidden = !lHidden" class="mir">Lovrinac<img src="../assets/lovrinac.png"></a>
         <a v-on:click="vHidden = !vHidden" class="mir">Varaždin<img src="../assets/varazdin.png"></a>
-        <Mirogoj v-if="!mHidden"></Mirogoj> 
+        <Mirogoj v-if="!mHidden"></Mirogoj>
         <Lovrinac v-if="!lHidden"></Lovrinac>
         <Varazdin v-if="!vHidden"></Varazdin>
     </div>

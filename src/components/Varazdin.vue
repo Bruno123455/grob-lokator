@@ -1,45 +1,70 @@
 <template>
-    <div class="all">
-        <section>
-        <p class="content"><b><br/>Varaždin, Tražim:</b> {{ Tražim }}</p>
-        <b-field label="Pretraži imena:">
-            <b-autocomplete
-                rounded
-                v-model="name"
-                :data="filteredDataArray"
-                placeholder="npr. Horvat"
-                icon="magnify"
-                clearable
-                @select="option => Tražim = option">
-                <template slot="empty">No results found</template>
-            </b-autocomplete>
-        </b-field>
-    </section>
-        <img src="../assets/varazdin.svg">
+    <div id="app">
+    <div id='container' style="margin:50px auto 0; width:250px;">
+        <h1>Tražim:</h1>
+        <br>
+        <ejs-dropdownlist v-model="selected" id='dropdownlist' placeholder='Odaberi ime' :dataSource='images' :fields='fields'></ejs-dropdownlist>
     </div>
+    <img v-if="selected" :src="require('@/assets/varazdin/' + selected)">
+  </div>
 </template>
 
 <script>
     export default {
         data() {
             return {
-                data: [
-                    'Perić',
-                    'Marić',
-                    'Horvat',
-                ],
-                name: '',
-                Tražim: null
-            }
-        },
-        computed: {
-            filteredDataArray() {
-                return this.data.filter((option) => {
-                    return option
-                        .toString()
-                        .toLowerCase()
-                        .indexOf(this.name.toLowerCase()) >= 0
-                })
+                selected: "varazdin.svg",
+                images: [
+                    {
+                        ime: 'Marko Babić',
+                        url: "v_markobabić.png",
+                    },
+                    {
+                        ime: "Marta Grgić",
+                        url: "v_martagrgić.png"
+                    },
+                    {
+                        ime: "Josip Broz",
+                        url: "v_josipbroz.png"
+                    },
+                    {
+                        ime: "Petra Janković",
+                        url: "v_petrajanković.png"
+                    },
+                    {
+                        ime: "Nada Kralj",
+                        url: "v_nadakralj.png"
+                    },
+                    {
+                        ime: "Paula Marušić",
+                        url: "v_paulamarušić.png"
+                    },
+                    {
+                        ime: "Miljenko Petrić",
+                        url: "v_miljenkopetrić.png"
+                    },
+                    {
+                        ime: "Čedomir Poljak",
+                        url: "v_čedomirpoljak.png"
+                    },
+                    {
+                        ime: "Marina Pranjić",
+                        url: "v_marinapranjić.png"
+                    },
+                    {
+                        ime: "Mia Varga",
+                        url: "v_miavarga.png"
+                    },
+                    {
+                        ime: "Nikolina Vidović",
+                        url: "v_nikolinavidović.png"
+                    },
+                    {
+                        ime: "Dora Vuković",
+                        url: "v_doravuković.png"
+                    }
+                    ],
+                    fields : {text:'ime', value:'url'}
             }
         }
     }
@@ -53,10 +78,20 @@
         margin:auto;
         display: inline-block;
     }
-    .all{
+    #app{
         width: 80%;
         margin:auto;
         margin-top: 50px;
         border-top: 5px solid #B0A690;
+        font-size: 25px;
+        color: #D7D6CB;
+        font-weight: bold;
     }
+    #dropdownlist{
+        color: #D7D6CB;
+        font-size: 20px;
+    }
+    @import "../../node_modules/@syncfusion/ej2-base/styles/material.css";
+    @import "../../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+    @import "../../node_modules/@syncfusion/ej2-vue-dropdowns/styles/material.css";
 </style>
